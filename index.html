@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Phys-HCMUS-VNU</title>
+    <link rel="shortcut icon" type="image/png" href="src/image/vi_phys_small.png" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='src/style/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='src/style/main.css'>
+    <script src='src/js/lodash.min.js'></script>
+    <script src='src/js/html2canvas.min.js'></script>
+    <script src='src/js/d3@7.js'></script>
+    <script src='src/js/boostrap.min.js' defer></script>
+    <script src='src/js/datahandle.js' defer></script>
+    <script src='src/js/draw.js' defer></script>
+    <script src='src/js/main.js' defer></script>
+</head>
+<body>
+    <div class="h-dvh w-screen flex flex-col p-1">
+        <div class="container mx-auto flex-none z-1 d-print-none">
+            <div id="menu" class="flex items-center w-full h-12 rounded-md bg-slate-200 p-2">
+                <div class="flex flex-1">
+                    <!-- <div class="basis-1/4">
+                        <div class="btn-group" id="btnYearG1">
+                            <button  class="btn btn-info" id="btnYear1" type="button">
+                                <form class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1" checked>
+                                    <label class="form-check-label" for="flexCheckChecked1">
+                                        Năm 1
+                                    </label>
+                                </form>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="basis-1/4">
+                        <div class="btn-group" id="btnYearG2">
+                            <button  class="btn btn-info" id="btnYear2" type="button">
+                                <form class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked>
+                                    <label class="form-check-label" for="flexCheckChecked2">
+                                        Năm 2
+                                    </label>
+                                </form>
+                            </button>
+                        </div>
+                    </div> -->
+                    <!-- <div class="basis-1/4">
+                        <div class="btn-group" id="btnYearG3">
+                            <button  class="btn btn-info" id="btnYear3" type="button">
+                                <form class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3" checked>
+                                    <label class="form-check-label" for="flexCheckChecked3">
+                                        Năm 3
+                                    </label>
+                                </form>
+                            </button>
+                            <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu d-print-none">
+                                <li class="dropdown-item" value="Chuyên ngànhhướng 1">Chuyên ngànhhướng 1</li>
+                                <li class="dropdown-item" value="Chuyên ngànhhướng 2">Chuyên ngànhhướng 2</li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="dropdown-item" value="all">Tất cả</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="basis-1/4">
+                        <div class="btn-group" id="btnYearG4">
+                            <button  class="btn btn-info" id="btnYear4" type="button">
+                                <form class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4" checked>
+                                    <label class="form-check-label" for="flexCheckChecked4">
+                                        Năm 4
+                                    </label>
+                                </form>
+                            </button>
+                            <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu d-print-none">
+                                <li class="dropdown-item" value="Chuyên ngànhhướng 1 VLHN">[1-VLHN] Vật Lý Hạt Nhân</li>
+                                <li class="dropdown-item" value="Chuyên ngànhhướng 1 VLĐC">[1-VLĐC] Vật Lý Địa Cầu</li>
+                                <li class="dropdown-item" value="Chuyên ngànhhướng 1 VLLT">[1-VLLT] Vật Lý Lý Thuyết</li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="dropdown-item" value="Chuyên ngànhhướng 2 VLCR">[2-VLCR] Vật Lý Chất Rắn</li>
+                                <li class="dropdown-item" value="Chuyên ngànhhướng 2 VLTH">[2-VLTH] Vật Lý Tin Học</li>
+                                <li class="dropdown-item" value="Chuyên ngànhhướng 2 VLĐT">[2-VLĐT] Vật Lý Điện Tử</li>
+                                <li class="dropdown-item" value="Chuyên ngànhhướng 2 VLUD">[2-VLUD] Vật Lý Ứng Dụng</li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="dropdown-item" value="all">Tất cả</li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="grow">
+                    <div class="flex items-center gap-1">
+                        <a href="roadmap.html" target="_blank" class="btn btn-primary flex items-center gap-1">
+                            Lộ trình
+                        </a>
+                        <!-- <button id="btnfilter" class="btn btn-primary flex items-center gap-1" type="button" data-bs-toggle="modal" data-bs-target="#modalfilter">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                                    <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z"/>
+                                </svg>
+                            </div>
+                            Bộ lọc
+                        </button> -->
+                        <button class="btn btn-primary flex items-center gap-1" type="button" data-bs-toggle="collapse" data-bs-target="#legendHolder" aria-expanded="true" aria-controls="legendHolder">
+                            <div>
+                                <svg class="toggleicon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                                </svg>
+                                <svg class="showicon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+                                    <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z"/>
+                                    <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z"/>
+                                </svg>
+                            </div>
+                            Chú thích
+                        </button>
+                        <div class="button btn btn-primary">
+                            <div class="button flex items-center gap-1" id="imagedownload">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                      </svg>
+                                </div>
+                                <div class="hidden md:block">Tải xuống</div></div>
+                            <a id="download" href="#" class="pointer-events-none hidden"></a>
+                        </div>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                        </svg> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg id="main_svg" class="grow w-full">
+            <rect class="view"></rect>
+            <g class="holder">
+                <g class="grid"></g>
+                <g class="holderLink"></g>
+                <g class="holderNode"></g>
+            </g>
+        </svg>
+        <div id="legendHolder" class="collapse show legend fixed bottom-1 right-1">
+            <div  style="max-height: 50dvh" class="relative flex flex-warp bg-slate-50/75 p-0.5 rounded-md border-slate-500 border-solid border-t-2 border-l-2">
+                <div class="require p-1 mr-4 flex-none overflow-y-auto">
+                    <div class="small rounded-md m-1 p-1 bg-slate-300 border-2 border-slate-500 border-solid">Bắt buộc</div>
+                    <div class="small rounded-md m-1 p-1 bg-slate-300">Tự chọn</div>
+                    <div class="small rounded-md m-1 p-1 bg-slate-300 border-2 border-slate-500 border-dotted">Không tính GPA</div>
+                </div>
+                <div class="cat p-1 grow overflow-y-auto">
+
+                </div>
+                <div id="hideLegend" class="absolute top-1 right-1 -translate-y-full bg-slate-50/75 px-2 pb-1.5 pt-1 rounded-md border-slate-500 border-solid border-t-2 border-l-2"
+                data-bs-toggle="collapse" data-bs-target="#legendHolder" aria-expanded="true" aria-controls="legendHolder">Ẩn</div>
+            </div>
+        </div>
+        <div class="absolute left-12 top-24" id="specialTitle">
+            <p class="h6">VẬT LÝ Y KHOA</h1>
+            <p class="h4 detail"></h1>
+        </div>
+        <div id="modalfilter" class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Bộ lọc</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-print-none">
+                    <h4 class="h5">Lọc theo hướng chuyên ngành</h4>
+                    <div id="filtergy3">
+                        
+                    </div>
+                    <hr class="mt-1 mb-2">
+                    <h4 class="h5">Lọc theo chuyên ngành</h4>
+                    <div id="filtergy4">
+                        
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

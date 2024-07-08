@@ -1,0 +1,75 @@
+svg.onHighlight {
+    path.link {
+        opacity: 0;
+        &.highlight {
+            opacity: 1;
+            stroke-width: 3;
+            stroke-dasharray: 5;
+            animation: dash 3s linear infinite;
+        }
+    }
+    .node {
+        opacity: 0.2;
+        &.highlight {
+            opacity: 1;
+        }
+    }
+}
+@keyframes dash {
+    from {
+        stroke-dashoffset: 100;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+}
+
+.blink {
+    // transform-origin:center;
+    // transform-box:fill-box;
+    // animation: blink 2s ease alternate infinite;
+
+    animation: svg-shadow 1.5s ease-in-out infinite alternate;
+}
+@keyframes blink {
+    70% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes svg-shadow {
+    from {
+      filter: drop-shadow( 0 0 0px #fff) drop-shadow( 0 0 15px #009de6) drop-shadow( 0 0 0px #009de6);
+    }
+  
+    to {
+      
+      filter: drop-shadow( 0 0 20px #fff) drop-shadow( 0 0 25px #009de6) drop-shadow( 0 0 40px #009de6);
+    }
+  }
+
+.collapse.show {
+    visibility: unset;
+}
+
+.btn{
+    &[aria-expanded="true"]{
+        .toggleicon{
+            display: block;
+        }
+        .showicon{
+            display: none;
+        }
+    }
+    &[aria-expanded="false"]{
+        .toggleicon{
+            display: none;
+        }
+        .showicon{
+            display: block;
+        }
+    }
+}
